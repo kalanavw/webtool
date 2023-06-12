@@ -3,7 +3,9 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>
+      W E B T O O L
+    </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">Link 1</a>
       <a mat-list-item href="#">Link 2</a>
@@ -17,11 +19,25 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        >
+        <!-- *ngIf="isHandset$ | async" -->
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>webtool</span>
+      <span>
+        <!-- <img src="assets/images/web-tool-original.png"/> -->
+      </span>
+      <span class="spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+      <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+        <mat-icon>filter_list</mat-icon>
+      </button>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
